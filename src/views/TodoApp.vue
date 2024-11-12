@@ -14,8 +14,6 @@
     keyword.value = '';
   };
 
-  console.log(tasks.value);
-
   watch(tasks.value, (val, old) => console.log(val));
 
   const deleteTask = (id) => {
