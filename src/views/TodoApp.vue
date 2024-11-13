@@ -9,21 +9,32 @@
     tasks.value.push({
       id: tasks.value.length,
       title: keyword.value,
+      isEdit: false,
       isDone: false,
     });
     keyword.value = '';
   };
 
-  watch(tasks.value, (val, old) => console.log(val));
 
   const deleteTask = (id) => {
-    console.log(id);
     tasks.value = tasks.value.filter((item, i) => item.id !== id);
   };
 
+  const handleChangeWording = (index) => {
+    tasks.value = tasks.value.map((item, i) => {
+      if(i === index) {
+        return {
+          ...item,
+          isEdit: !item.isEdit,
+        }
+      } else return item;
+    })
+  };
+
+
   const resetTask = () => {
     tasks.value = [];
-  }
+  };
 
 </script>
 
@@ -51,7 +62,11 @@
       </div>
     </div>
     <div class="flex flex-col gap-2 w-[400px]">
-      <TodoItem :items="tasks" :deleteTask="deleteTask" />
+      <TodoItem 
+        :items="tasks" 
+        :handleChangeWording="handleChangeWording" 
+        :deleteTask="deleteTask" 
+      />
     </div>
   </main>
 </template>
