@@ -31,6 +31,17 @@
     })
   };
 
+  const handleChangeCompleted = (index) => {
+    tasks.value = tasks.value.map((item, i) => {
+      if(i === index) {
+        return ({
+          ...item,
+          isDone: !item.isDone,
+        });
+      } else return item;
+    })
+  };
+
 
   const resetTask = () => {
     tasks.value = [];
@@ -61,10 +72,11 @@
         </button>
       </div>
     </div>
-    <div class="flex flex-col gap-2 w-[400px]">
+    <div class="flex flex-col gap-2 w-1/2">
       <TodoItem 
         :items="tasks" 
         :handleChangeWording="handleChangeWording" 
+        :handleChangeCompleted="handleChangeCompleted"
         :deleteTask="deleteTask" 
       />
     </div>

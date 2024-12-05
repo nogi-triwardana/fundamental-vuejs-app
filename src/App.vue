@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue';
 import { pages } from './router/pages';
 
-console.log({ pages });
 </script>
 
 <template>
@@ -17,7 +16,7 @@ console.log({ pages });
     >
       {{ page.label }}
     </RouterLink>
-    </nav>
+  </nav>
 
   <RouterView />
 </template>
