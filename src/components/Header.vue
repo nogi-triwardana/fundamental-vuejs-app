@@ -1,8 +1,5 @@
 <script setup>
-  const props = defineProps(['menuBar'])
-  // const props = defineProps(['menu'])
-
-  console.log(props.menuBar)
+  const props = defineProps(['menuBar']);
 
 </script>
 

@@ -1,4 +1,5 @@
 import TodoApp from '../views/TodoApp.vue';
+import QuizApp from '../views/QuizApp.vue';
 
 export const pages = [
   {
@@ -6,6 +7,12 @@ export const pages = [
     name: 'todoapp',
     label: 'To Do App',
     component: TodoApp
+  },
+  {
+    path: '/quiz',
+    name: 'quizapp',
+    label: 'Quiz App',
+    component: QuizApp
   },
   // {
   //   path: '/about',

@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, watch } from 'vue';
+  import { ref } from 'vue';
   import TodoItem from '../components/todoapp/todoitem.vue';
 
   const tasks = ref([]);
